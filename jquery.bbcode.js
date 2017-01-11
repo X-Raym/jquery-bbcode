@@ -112,7 +112,7 @@
         a.lists = {
             re: /\[list\]([\s\S]*?)\[\/list\]/ig,
             sub: function(a, b) {
-                b = b.replace(/\[\*\](.+)/ig,
+                b = b.replace(/\[\*\](.+)[(\[\*\]|\n)]/ig,
                     function(b, a) {
                         return "<li>" + a.replace(/[\n\r?]/, "") + "</li>"
                     });
@@ -124,7 +124,7 @@
             sub: function(a, b, c) {
                 a = "";
                 a = b === "1" ? "<ol>" : b === "a" ? '<ol style="list-style-type: lower-alpha">' : "<ol>";
-                c = c.replace(/\[\*\]([^\[\*\]]*)/ig, function(a, b) {
+                c = c.replace(/\[\*\](.+)[(\[\*\]|\n)]/ig, function(a, b) {
                     return "<li>" + b.replace(/[\n\r?]/, "") + "</li>"
                 });
                 return a + c.replace(/[\n\r?]/, "") + "</ol>"
