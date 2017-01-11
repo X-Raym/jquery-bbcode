@@ -112,7 +112,7 @@
         a.lists = {
             re: /\[list\]([\s\S]*?)\[\/list\]/ig,
             sub: function(a, b) {
-                b = b.replace(/\[\*\]([^\[\*\]]*)/ig,
+                b = b.replace(/\[\*\]([^\n]*)/ig,
                     function(b, a) {
                         return "<li>" + a.replace(/[\n\r?]/, "") + "</li>"
                     });
