@@ -116,7 +116,7 @@
                     function(b, a) {
                         return "<li>" + a.replace(/[\n\r]/, "") + "</li>"
                     });
-                return "<ul>" + b.replace(/[\n\r?]/, "") + "</ul>"
+                return "<ul>" + b.replace(/[\n\r]/, "") + "</ul>"
             }
         };
         a.lists2 = {
