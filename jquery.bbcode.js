@@ -1,4 +1,4 @@
-// BBCode.js v0.1 by Kai Mallea
+// BBCode.js v0.1.1 by X-Raym, mod from v0.1 by Kai Mallea
 // https://github.com/kaimallea/bbcode
 // License: http://www.opensource.org/licenses/mit-license.php
 (function() {
@@ -114,7 +114,7 @@
             sub: function(a, b) {
                 b = b.replace(/\[\*\](.+)[(\[\*\]|\n)]/ig,
                     function(b, a) {
-                        return "<li>" + a.replace(/[\n\r?]/, "") + "</li>"
+                        return "<li>" + a.replace(/[\n\r]/, "") + "</li>"
                     });
                 return "<ul>" + b.replace(/[\n\r?]/, "") + "</ul>"
             }
